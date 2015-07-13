@@ -10,6 +10,7 @@ RUN git clone https://github.com/ceph/teuthology.git /opt/teuthology
 
 RUN git clone https://github.com/ceph/ceph-qa-suite.git /opt/ceph-qa-suite
 
-RUN cd /opt/teuthology; ./bootstrap install
+RUN cd /opt/teuthology; ./bootstrap install; \
+    ./virtualenv/bin/teuthology roles/3-simple.yaml | echo
 
 RUN ["/bin/bash"]
